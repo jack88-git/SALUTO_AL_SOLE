@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>*** OPERAZIONE APERITIVO VENERDÌ - BAR CAVÒ 24 VERONA ***</title>
+    <style>
+        /* Stile autentico Web 1.0 anni '90 */
+        body {
+            background-color: #ffcc66;
+            /* Pattern geometrico vintage generato in CSS puro */
+            background-image: 
+                radial-gradient(#ff6600 15%, transparent 16%),
+                radial-gradient(#ff9900 15%, transparent 16%);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", cursive, sans-serif;
+            color: #000080;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Tabelle con bordi 3D classici anni '90 */
+        .retro-table {
+            background-color: #ffffcc; 
+            border: 6px ridge #cc3300;
+            margin: 15px auto;
+            width: 95%;
+            max-width: 820px;
+            box-shadow: 8px 8px 0px #333333;
+        }
+
+        .retro-cell {
+            border: 3px groove #ff6600;
+            padding: 12px;
+        }
+
+        .header-banner {
+            background: linear-gradient(90deg, #ff3300, #ff9900, #ff3300);
+            color: #ffff00;
+            text-shadow: 2px 2px #000000;
+            padding: 15px;
+            border: 4px outset #ffcc00;
+        }
+
+        /* Grande scritta centrale effetto WordArt anni '90 */
+        .wordart-title {
+            font-family: "Times New Roman", Impact, Georgia, serif;
+            font-size: clamp(2.2em, 6vw, 3.6em);
+            font-weight: 900;
+            font-style: italic;
+            color: #ffff00;
+            background: linear-gradient(180deg, #ffffff 0%, #ffff00 45%, #ff6600 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(3px 3px 0px #800000) drop-shadow(6px 6px 0px #000000);
+            margin: 10px 0;
+            letter-spacing: 2px;
+            transform: skewX(-6deg);
+            display: inline-block;
+            padding: 5px 15px;
+            border-top: 3px dashed #ffff00;
+            border-bottom: 3px dashed #ffff00;
+        }
+
+        /* Animazione GIF Sole anni '90 */
+        .retro-sun-wrapper {
+            display: inline-block;
+            margin: 5px auto;
+        }
+
+        .retro-sun-spin {
+            animation: spinSun 12s steps(12) infinite;
+            transform-origin: 50px 50px;
+        }
+
+        @keyframes spinSun {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.5em;
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
+
+        /* Effetto lampeggiante <blink> simulato via CSS */
+        .blink {
+            animation: blinker 0.9s linear infinite;
+            font-weight: bold;
+            color: #ff0000;
+            background-color: #ffff00;
+            padding: 2px 6px;
+            border: 1px dashed #ff0000;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        /* Box del Countdown stile display digitale/tabella */
+        .countdown-box {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            border: 5px inset #808080;
+            padding: 15px;
+            margin: 10px auto;
+        }
+
+        .time-unit {
+            display: inline-block;
+            background-color: #1a1a1a;
+            border: 2px solid #00ff00;
+            padding: 8px 12px;
+            margin: 4px;
+            min-width: 75px;
+        }
+
+        .time-number {
+            font-size: 2.2em;
+            font-weight: bold;
+            display: block;
+            color: #ff9900;
+            text-shadow: 0 0 5px #ff3300;
+        }
+
+        .time-label {
+            font-size: 0.85em;
+            color: #00ff00;
+            text-transform: uppercase;
+        }
+
+        /* Cornici fotografiche rustiche anni '90 */
+        .photo-frame {
+            background-color: #e6e6e6;
+            border: 5px ridge #996633;
+            padding: 8px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px;
+            width: 220px;
+            box-shadow: 4px 4px 0px #663300;
+        }
+
+        .photo-frame img {
+            width: 200px;
+            height: 230px;
+            object-fit: cover;
+            border: 3px inset #666666;
+            background-color: #cccccc;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .photo-caption {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            font-size: 1.05em;
+            color: #800000;
+            margin-top: 8px;
+            background-color: #ffcc99;
+            border: 1px solid #800000;
+            padding: 4px;
+        }
+
+        .upload-photo-btn {
+            display: inline-block;
+            margin-top: 6px;
+            background-color: #c0c0c0;
+            color: #000000;
+            font-family: "Courier New", monospace;
+            font-size: 0.78em;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+            cursor: pointer;
+        }
+
+        .upload-photo-btn:active {
+            border-top: 2px solid #404040;
+            border-left: 2px solid #404040;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .win95-btn:active {
+            border-top: 4px solid #404040;
+            border-left: 4px solid #404040;
+            border-right: 4px solid #ffffff;
+            border-bottom: 4px solid #ffffff;
+            transform: translate(1px, 1px);
+        }
+
+        /* Box messaggio brindisi (sostituisce alert()) */
+        #toast-message {
+            display: none;
+            background-color: #ffff00;
+            border: 4px double #ff0000;
+            color: #000080;
+            font-weight: bold;
+            padding: 15px;
+            margin: 15px auto;
+            max-width: 600px;
+            font-size: 1.2em;
+        }
+
+        /* Contatore visite stile odometro */
+        .hit-counter {
+            background-color: #000000;
+            color: #ff0000;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            font-size: 1.3em;
+            padding: 3px 10px;
+            border: 3px inset #cccccc;
+            letter-spacing: 3px;
+        }
+
+        /* Animazione boccali che brindano */
+        @keyframes clink {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-18deg) scale(1.1); }
+            50% { transform: rotate(18deg) scale(1.2); }
+            75% { transform: rotate(-10deg) scale(1.1); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .clinking {
+            display: inline-block;
+            animation: clink 0.6s ease-in-out 3;
+        }
+
+        a {
+            color: #0000ff;
+            font-weight: bold;
+        }
+        a:visited {
+            color: #800080;
+        }
+        a:hover {
+            color: #ff0000;
+            background-color: #ffff00;
+        }
+
+        hr.retro-hr {
+            border: 0;
+            height: 6px;
+            background: repeating-linear-gradient(
+                45deg,
+                #ff0000,
+                #ff0000 10px,
+                #ffff00 10px,
+                #ffff00 20px
+            );
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Marquee scorrevole in alto stile anni '90 -->
+    <table class="retro-table" cellpadding="4" cellspacing="0">
+        <tr>
+            <td bgcolor="#000080" style="color: #ffff00; font-family: 'Courier New', monospace; font-size: 1.1em;">
+                <marquee behavior="scroll" direction="left" scrollamount="6">
+                    *** ATTENZIONE: L'INCHINO AL WEEKEND AL BAR CAVÒ 24 *** VIETATO MANCARE! *** CALICI ALTI E BIANCHETTI A VOLONTÀ *** VERONA CAPUT MUNDI ***
+                </marquee>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Contenitore Principale -->
+    <table class="retro-table" cellpadding="8" cellspacing="4">
+        <tr>
+            <td class="header-banner">
+                <!-- Sole Pixel-Art stile GIF animata anni '90 -->
+                <div class="retro-sun-wrapper" title="Sole del Venerdì - GIF Animata">
+                    <svg width="96" height="96" viewBox="0 0 100 100" shape-rendering="crispEdges">
+                        <!-- Raggi rotanti a scatti (effetto GIF 12 fps) -->
+                        <g class="retro-sun-spin">
+                            <polygon points="50,2 44,18 56,18" fill="#ffff00" stroke="#cc0000" stroke-width="2"/>
+                            <polygon points="50,98 44,82 56,82" fill="#ffff00" stroke="#cc0000" stroke-width="2"/>
+                            <polygon points="2,50 18,44 18,56" fill="#ffff00" stroke="#cc0000" stroke-width="2"/>
+                            <polygon points="98,50 82,44 82,56" fill="#ffff00" stroke="#cc0000" stroke-width="2"/>
+                            <polygon points="16,16 24,30 30,24" fill="#ff9900" stroke="#cc0000" stroke-width="2"/>
+                            <polygon points="84,84 76,70 70,76" fill="#ff9900" stroke="#cc0000" stroke-width="2"/>
+                            <polygon points="84,16 70,24 76,30" fill="#ff9900" stroke="#cc0000" stroke-width="2"/>
+                            <polygon points="16,84 30,76 24,70" fill="#ff9900" stroke="#cc0000" stroke-width="2"/>
+                        </g>
+                        <!-- Disco solare -->
+                        <circle cx="50" cy="50" r="26" fill="#ffff00" stroke="#cc0000" stroke-width="3"/>
+                        <!-- Occhiali da sole anni '90 -->
+                        <rect x="33" y="41" width="14" height="9" fill="#000000"/>
+                        <rect x="53" y="41" width="14" height="9" fill="#000000"/>
+                        <rect x="47" y="43" width="6" height="3" fill="#000000"/>
+                        <rect x="35" y="43" width="4" height="2" fill="#ffffff"/>
+                        <rect x="55" y="43" width="4" height="2" fill="#ffffff"/>
+                        <!-- Sorriso -->
+                        <path d="M 38 56 Q 50 67 62 56" fill="none" stroke="#cc0000" stroke-width="3"/>
+                    </svg>
+                </div>
+
+                <div>
+                    <div class="wordart-title">l'Inchino al Weekend</div>
+                </div>
+                <h1>IL CONTO ALLA ROVESCIA UFFICIALE PER IL SALUTO AL SOLE</h1>
+                <div style="font-size: 1.1em; color: #ffffff; font-family: 'Courier New', monospace;">
+                    ~ Appuntamento fisso ogni Venerdì alle ore 12:00 spaccate ~
+                </div>
+            </td>
+        </tr>
+
+        <!-- Sezione Countdown -->
+        <tr>
+            <td class="retro-cell" align="center">
+                <p style="font-size: 1.2em; margin: 5px 0;">
+                    <span class="blink">!!! ALLERTA SETE !!!</span> Mancano esattamente:
+                </p>
+
+                <div class="countdown-box" id="countdown-container">
+                    <div id="timer-display">
+                        <div class="time-unit">
+                            <span class="time-number" id="days">00</span>
+                            <span class="time-label">Giorni</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="hours">00</span>
+                            <span class="time-label">Ore</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="minutes">00</span>
+                            <span class="time-label">Minuti</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="seconds">00</span>
+                            <span class="time-label">Secondi</span>
+                        </div>
+                    </div>
+
+                    <!-- Messaggio festoso quando scatta il mezzogiorno del venerdì -->
+                    <div id="party-message" style="display: none; padding: 15px; color: #ffff00; font-size: 1.6em; font-family: 'Comic Sans MS', cursive;">
+                        🎉🍹 È ORA DELL'APERITIVO! TUTTI AL CAVÒ 24! 🍹🎉<br>
+                        <span style="font-size: 0.7em; color: #00ff00;">(Il timer ripartirà automaticamente tra pochi secondi per la prossima settimana!)</span>
+                    </div>
+
+                    <div id="target-date-info" style="margin-top: 10px; font-size: 0.9em; color: #cccccc;">
+                        Prossimo obiettivo: Venerdì ore 12:00:00
+                    </div>
+                </div>
+
+                <!-- Pulsante Interattivo Brindisi -->
+                <div style="margin-top: 15px;">
+                    <button class="win95-btn" onclick="triggerToast()">
+                        <span id="glass-left">🥂</span> BRINDA ORA! (Clicca per il Cin-Cin virtuale) <span id="glass-right">🍷</span>
+                    </button>
+                </div>
+
+                <!-- Area Messaggio Brindisi (al posto di alert) -->
+                <div id="toast-message"></div>
+            </td>
+        </tr>
+
+        <!-- Sezione Luogo dell'Evento -->
+        <tr>
+            <td class="retro-cell" style="background-color: #ffe6cc;">
+                <h2 style="font-family: 'Times New Roman', serif; color: #cc0000; margin-top: 0; text-decoration: underline;">
+                    📍 DOVE SI BEVE? IL QUARTIER GENERALE:
+                </h2>
+                <table border="3" cellpadding="10" cellspacing="2" align="center" bgcolor="#ffffff" style="border-color: #cc3300;">
+                    <tr>
+                        <td align="center">
+                            <font size="5" color="#cc3300"><b>🍷 BAR CAVÒ 24 🍷</b></font><br>
+                            <font size="4" face="Courier New, monospace"><b>Via Pellicciai, 24 - 37121 Verona (VR)</b></font><br><br>
+                            👉 <a href="https://www.google.com/maps/search/?api=1&query=Bar+Cavo+24+Via+Pellicciai+24+37121+Verona" target="_blank" rel="noopener noreferrer">
+                                [ CLICCA QUI PER APRIRE LA MAPPA SATELLITARE (GOOGLE MAPS) ]
+                            </a> 👈
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Galleria Fotografica: La Cricca del Venerdì -->
+        <tr>
+            <td class="retro-cell">
+                <hr class="retro-hr">
+                <h2 style="font-family: 'Times New Roman', serif; color: #000080; margin: 5px 0;">
+                    📸 LA CRICCA DEL VENERDÌ - I PROTAGONISTI DELL'APERITIVO 📸
+                </h2>
+                <p style="font-size: 0.95em; color: #663300; margin-bottom: 10px;">
+                    <i>Ecco i veterani del mezzogiorno pronti a presidiare il bancone di Via Pellicciai!</i><br>
+                    <small style="color: #000080;">(Se stai guardando l'anteprima online e non vedi le foto locali, usa il tasto <b>"📂 Carica foto"</b> qui sotto per selezionarle dal tuo dispositivo!)</small>
+                </p>
+
+                <!-- Foto 1: IMG_7920.jpg -->
+                <div class="photo-frame">
+                    <img id="img-slot-1" src="IMG_7920.jpg" alt="Protagonista Aperitivo 1" onerror="this.onerror=null; this.src='https://placehold.co/200x230/ffcc66/800000?text=IMG_7920.jpg';">
+                    <div class="photo-caption">
+                        "Pronto al Brindisi"<br>
+                        <small style="font-weight: normal; color: #000000;">Sorriso d'ordinanza pre-aperitivo</small>
+                    </div>
+                    <label class="upload-photo-btn">
+                        📂 Carica IMG_7920
+                        <input type="file" accept="image/*" style="display:none;" onchange="loadLocalPhoto(event, 'img-slot-1')">
+                    </label>
+                </div>
+
+                <!-- Foto 2: IMG_7919.jpg -->
+                <div class="photo-frame">
+                    <img id="img-slot-2" src="IMG_7919.jpg" alt="Protagonista Aperitivo 2" onerror="this.onerror=null; this.src='https://placehold.co/200x230/ffcc66/800000?text=IMG_7919.jpg';">
+                    <div class="photo-caption">
+                        "Il Capitano del Venerdì"<br>
+                        <small style="font-weight: normal; color: #000000;">Occhiale tattico e sguardo al bancone</small>
+                    </div>
+                    <label class="upload-photo-btn">
+                        📂 Carica IMG_7919
+                        <input type="file" accept="image/*" style="display:none;" onchange="loadLocalPhoto(event, 'img-slot-2')">
+                    </label>
+                </div>
+
+                <!-- Foto 3: 171C41BA-46DB-418E-82A0-C1C31D9694D7.jpg -->
+                <div class="photo-frame">
+                    <img id="img-slot-3" src="171C41BA-46DB-418E-82A0-C1C31D9694D7.jpg" alt="Protagonista Aperitivo 3" onerror="this.onerror=null; this.src='https://placehold.co/200x230/ffcc66/800000?text=Foto+Cricca+3';">
+                    <div class="photo-caption">
+                        "Modalità Cavò 24"<br>
+                        <small style="font-weight: normal; color: #000000;">Coppola d'ordinanza e primo giro pagato</small>
+                    </div>
+                    <label class="upload-photo-btn">
+                        📂 Carica 3ª Foto
+                        <input type="file" accept="image/*" style="display:none;" onchange="loadLocalPhoto(event, 'img-slot-3')">
+                    </label>
+                </div>
+
+                <hr class="retro-hr">
+            </td>
+        </tr>
+
+        <!-- Footer stile Web 1.0 -->
+        <tr>
+            <td class="retro-cell" bgcolor="#e0e0e0" style="font-family: 'Times New Roman', Times, serif; color: #000000;">
+                <div style="margin-bottom: 10px;">
+                    🚧 <span class="blink">SITO IN COSTRUZIONE PERENNE</span> 🚧<br>
+                    <small>(Aggiornato manualmente tra un bianchetto e l'altro)</small>
+                </div>
+
+                <div style="margin: 10px 0;">
+                    Sei il visitatore assetato n° <span class="hit-counter" id="visitor-counter">004829</span>
+                </div>
+
+                <div style="font-size: 0.85em; color: #333333; margin-top: 10px; border-top: 2px groove #ffffff; padding-top: 8px;">
+                    Ottimizzato per <b>Netscape Navigator 4.0</b> e <b>Internet Explorer 5.0</b> - Risoluzione consigliata <b>800x600</b><br>
+                    Webmaster: <i>La Cricca del Cavò 24 - Verona</i> &copy; 1998-2026
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        /**
+         * Calcola la data e l'ora del prossimo venerdì alle 12:00:00 (ora locale).
+         * Se oggi è venerdì e non sono ancora le 12:00:00, restituisce oggi alle 12:00:00.
+         * Se oggi è venerdì e sono già passate le 12:00:00 (oltre la finestra di festa),
+         * restituisce il venerdì della settimana prossima alle 12:00:00.
+         */
+        function getNextFridayNoon(now) {
+            const target = new Date(now.getTime());
+            const currentDay = now.getDay(); // 0 = Domenica, 5 = Venerdì
+            let daysUntilFriday = (5 - currentDay + 7) % 7;
+
+            target.setDate(now.getDate() + daysUntilFriday);
+            target.setHours(12, 0, 0, 0);
+
+            // Finestra di celebrazione di 60 secondi (dalle 12:00:00 alle 12:00:59 del venerdì)
+            const celebrationEnd = new Date(target.getTime() + 60 * 1000);
+
+            if (now >= celebrationEnd) {
+                // È già passato mezzogiorno di questo venerdì (e il minuto di festa), passa al prossimo venerdì (+7 giorni)
+                target.setDate(target.getDate() + 7);
+            }
+
+            return target;
+        }
+
+        function formatItalianDate(date) {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('it-IT', options) + ' alle 12:00:00';
+        }
+
+        function updateCountdown() {
+            const now = new Date();
+            const target = getNextFridayNoon(now);
+            const diff = target.getTime() - now.getTime();
+
+            const timerDisplay = document.getElementById('timer-display');
+            const partyMessage = document.getElementById('party-message');
+            const targetInfo = document.getElementById('target-date-info');
+
+            // Se diff <= 0 (ma entro i 60 secondi di festa gestiti da getNextFridayNoon), mostra il messaggio di festa!
+            if (diff <= 0) {
+                timerDisplay.style.display = 'none';
+                partyMessage.style.display = 'block';
+                targetInfo.textContent = "ADESSO! CORRI AL BAR CAVÒ 24!";
+                return;
+            } else {
+                timerDisplay.style.display = 'block';
+                partyMessage.style.display = 'none';
+            }
+
+            const totalSeconds = Math.floor(diff / 1000);
+            const days = Math.floor(totalSeconds / (3600 * 24));
+            const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            targetInfo.textContent = "Prossimo obiettivo: " + formatItalianDate(target);
+        }
+
+        /**
+         * Sintetizza un suono di cin-cin (tinnito di bicchieri di cristallo) tramite Web Audio API
+         * senza alcuna dipendenza da file esterni.
+         */
+        function playClinkSound() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+
+                const ctx = new AudioContext();
+                const now = ctx.currentTime;
+
+                // Due frequenze alte armoniche per simulare il cristallo che tintinna
+                const frequencies = [2450, 3680];
+                frequencies.forEach((freq, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, now + idx * 0.03);
+
+                    gain.gain.setValueAtTime(0.001, now + idx * 0.03);
+                    gain.gain.exponentialRampToValueAtTime(0.25, now + idx * 0.03 + 0.01);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.03 + 0.8);
+
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+
+                    osc.start(now + idx * 0.03);
+                    osc.stop(now + idx * 0.03 + 0.85);
+                });
+            } catch (e) {
+                // Ignora silenziosamente se l'audio è bloccato dal browser
+            }
+        }
+
+        let toastCount = 0;
+        const phrases = [
+            "🥂 CIN CIN! Si alza il calice per l'Inchino al Weekend al Cavò 24!",
+            "🍻 SALUTE! Alla faccia di chi lavora anche il venerdì pomeriggio!",
+            "🍷 PROSIT! Un bianchetto fermo e via verso il fine settimana!",
+            "🥂 EVVIVA! Via Pellicciai 24 ci aspetta: il primo giro è virtuale, il prossimo è vero!"
+        ];
+
+        function loadLocalPhoto(event, imgId) {
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById(imgId).src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function triggerToast() {
+            playClinkSound();
+
+            const glassL = document.getElementById('glass-left');
+            const glassR = document.getElementById('glass-right');
+            glassL.classList.remove('clinking');
+            glassR.classList.remove('clinking');
+            void glassL.offsetWidth; // Force reflow per riavviare animazione
+            glassL.classList.add('clinking');
+            glassR.classList.add('clinking');
+
+            const msgBox = document.getElementById('toast-message');
+            const phrase = phrases[toastCount % phrases.length];
+            toastCount++;
+
+            msgBox.innerHTML = phrase + "<br><small style='color:#cc0000;'>(Brindisi virtuali effettuati in questa sessione: " + toastCount + ")</small>";
+            msgBox.style.display = 'block';
+        }
+
+        // Incrementa leggermente il contatore visite finto ad ogni caricamento usando localStorage se disponibile
+        function initVisitorCounter() {
+            try {
+                let count = parseInt(localStorage.getItem('cavo24_hits') || '4829', 10);
+                count++;
+                localStorage.setItem('cavo24_hits', count.toString());
+                document.getElementById('visitor-counter').textContent = String(count).padStart(6, '0');
+            } catch (e) {
+                // Fallback statico se localStorage non è accessibile
+            }
+        }
+
+        window.onload = function() {
+            initVisitorCounter();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        };
+    </script>
+</body>
+</html>
